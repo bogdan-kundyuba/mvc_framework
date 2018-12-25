@@ -56,7 +56,6 @@ class Product extends \components\Db {
 
     public static function getProductsByIds($idsArray) {
         // Database connection
-
         $products = [];
         $db = self::getConnection();
 

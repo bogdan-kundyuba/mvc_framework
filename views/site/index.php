@@ -77,7 +77,7 @@
                                                    data-id="<?php echo $sliderItem['id']; ?>"><i
                                                             class="fa fa-shopping-cart"></i>В корзину</a>
                                             </div>
-                                            <?php if ($sliderItem['is_new']) { ?>
+                                            <?php if($sliderItem['is_new']) { ?>
                                                 <img src="/public/images/home/new.png" class="new" alt=""/>
                                             <?php } ?>
                                         </div>

@@ -22,19 +22,19 @@ class UserController {
             if(!\models\User::checkName($name)){
                 $errors[] = "Имя не должно быть короче 2-x символов!";
 //                $errors = false;
-//                echo "<div class='col-sm-4 col-sm-offset-4 padding-right'><ul><li> Имя не должно быть короче 2-x символов!</li></ul></div>";
+//                echo "<div class='row'>Имя не должно быть короче 2-x символов!</div>";
             }
 
             if(!\models\User::checkEmail($email)){
                 $errors[] = "Неправильный email!";
 //                $errors = false;
-//                echo "<ul><li> Неправильный email!</li></ul>";
+//                echo "<div class='row'>Неправильный email!</div>";
             }
 
             if(!\models\User::checkPassword($password)){
                 $errors[] = "Пароль не должнен быть короче 6-символов!";
 //                $errors = false;
-//                echo "<ul><li> Пароль не должнен быть короче 6-символов!</li></ul>";
+//                echo "<div class='row'>Пароль не должнен быть короче 6-символов!</div>";
             }
 
             if(\models\User::checkEmailExists($email)){

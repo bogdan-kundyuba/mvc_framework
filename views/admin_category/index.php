@@ -1,4 +1,4 @@
-<?php require_once ROOT. "/views/layouts/header_admin.php"; ?>
+<?php include ROOT. "/views/layouts/header_admin.php"; ?>
 <?php require_once ROOT. "/models/Category.php"; ?>
 
 <section>

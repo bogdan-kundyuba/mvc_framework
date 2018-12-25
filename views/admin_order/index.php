@@ -1,4 +1,4 @@
-<?php require_once ROOT. "/views/layouts/header_admin.php"; ?>
+<?php include ROOT. "/views/layouts/header_admin.php"; ?>
 
     <section>
         <div class="container">
@@ -25,22 +25,25 @@
                         <th></th>
                         <th></th>
                     </tr>
+                    <?php foreach($orderList as $order){ ?>
                     <tr>
                         <td>
-                            <a href="/admin/order/view/">
-
+                            <a href="/admin/order/view/<?php echo $order['id']; ?>">
+                                <?php echo $order['id']; ?>
                             </a>
                         </td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td><a href="/admin/order/view/"></a></td>
-                        <td><a href="/admin/order/update/"></a></td>
-                        <td><a href="/admin/order/update/"></a></td>
+                        <td><?php echo $order['user_name']; ?></td>
+                        <td><?php echo $order['user_phone']; ?></td>
+                        <td><?php echo $order['date']; ?></td>
+                        <td><a href="/admin/order/view/<?php echo $order['id']; ?>" title="Смотреть"><i class="fa fa-eye"></i></a></td>
+                        <td><a href="/admin/order/update/<?php echo $order['id']; ?>" title="Редактировать"><i class="fa fa-pencil-square-o"></i></a></td>
+                        <td><a href="/admin/order/delete/<?php echo $order['id']; ?>" title="Удалить"><i class="fa fa-times"></i></a></td>
                     </tr>
+                    <?php } ?>
                 </table>
+
             </div>
         </div>
     </section>
 
-<?php require_once ROOT. "/views/layouts/footer_admin.php"; ?>
+<?php include ROOT. "/views/layouts/footer_admin.php"; ?>
