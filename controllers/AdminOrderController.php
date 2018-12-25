@@ -13,7 +13,7 @@ class AdminOrderController extends AdminBase {
         // Get order list
         $orderList = \models\Order::getOrderList();
 
-        // Include template file
+        // Include view file
         require_once(ROOT. "/views/admin_order/index.php");
         return true;
     }
@@ -34,6 +34,7 @@ class AdminOrderController extends AdminBase {
         // Получаем список товаров в заказе
         $products = \models\Product::getProductsByIds($prodIds);
 
+        // Include view file
         require_once(ROOT. "/views/admin_order/view.php");
         return true;
     }
@@ -62,6 +63,7 @@ class AdminOrderController extends AdminBase {
             header("Location: http://mysite.loc/admin/order/view/$id");
         }
 
+        // Include view file
         require_once(ROOT. "/views/admin_order/update.php");
         return true;
     }
@@ -70,14 +72,17 @@ class AdminOrderController extends AdminBase {
         // Check access
         parent::__construct();
 
+        // Process form data
         if(isset($_POST['submit'])){
 
+            // delete order
             \models\Order::deleteOrderById($id);
 
-            // Перенаправляем пользователя на страницу управлениями товарами
+            // Redirect user to the product management page
             header("Location: http://mysite.loc/admin/order");
         }
 
+        // Include view file
         require_once(ROOT. "/views/admin_order/delete.php");
         return true;
     }

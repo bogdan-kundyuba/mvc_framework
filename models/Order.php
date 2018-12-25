@@ -38,21 +38,9 @@ class Order extends \components\Db {
         $db = self::getConnection();
 
         // Get and return results. Used prepared request
-        $res = $db->prepare("SELECT id, user_name, user_phone, date, status FROM product_order ORDER BY id DESC");
-        $res->execute();
-//        $ordersList = [];
-//        $i = 0;
-//        while ($row = $res->fetch()) {
-//            $ordersList[$i]['id'] = $row['id'];
-//            $ordersList[$i]['user_name'] = $row['user_name'];
-//            $ordersList[$i]['user_phone'] = $row['user_phone'];
-//            $ordersList[$i]['date'] = $row['date'];
-//            $ordersList[$i]['status'] = $row['status'];
-//            $i++;
-//            return $ordersList;
-//        }
-//        $res->fetch(\PDO::FETCH_INTO);
-        return $res;
+        $result = $db->prepare("SELECT id, user_name, user_phone, date, status FROM product_order ORDER BY id DESC");
+        $result->execute();
+        return $result;
     }
 
     public static function getOrderById($id){
