@@ -10,7 +10,18 @@
                     <li><a href="/admin/order">Управление заказами</a></li>
                     <li class="active">Удалить заказ</li>
                 </ol>
+
+                <h4>Удалить категорию #<?php echo $id; ?></h4>
+
+                <p>Вы действительно хотите удалить эту категорию?</p>
+
+                <form method="post">
+                    <input type="submit" name="submit" value="Удалить">
+                </form>
+
             </div>
+
+            <br>
         </div>
     </div>
 </section>

@@ -33,6 +33,7 @@
                     <td><a href="/admin/category/delete/<?php echo $category['id'];?>" title="Удалить"><i class="fa fa-times"></i></a></td>
                 </tr>
                 <?php } ?>
+
             </table>
         </div>
     </div>

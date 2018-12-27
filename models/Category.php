@@ -26,6 +26,12 @@ class Category extends \components\Db {
     public static function deleteCategoryById($id){
         // Database connection
         $db = self::getConnection();
+
+        $pdo29 = $db->prepare("DELETE FROM category WHERE id=?");
+        $pdo29->bindParam(1,$id);
+        $pdo29->execute();
+        $pdo29->fetchAll();
+        return $pdo29;
     }
 
     public static function getCategoryById($id) {
@@ -44,10 +50,24 @@ class Category extends \components\Db {
             case '1':
                 return 'Отображается';
                 break;
-            case 'o':
+            case '0':
                 return 'Скрыто';
                 break;
         }
+    }
+
+    public static function createCategory($name, $sortOrder, $status) {
+        // Database connection
+        $db = self::getConnection();
+
+        //
+        $sql = "INSERT INTO category(name, sort_order, status) VALUES(:name,:sort_order,:status)";
+        $pdo28 = $db->prepare($sql);
+        $pdo28->bindParam(':name', $name, \PDO::PARAM_STR);
+        $pdo28->bindParam(':sort_order', $sortOrder, \PDO::PARAM_INT);
+        $pdo28->bindParam(':status', $status, \PDO::PARAM_INT);
+        $pdo28->execute();
+        return $pdo28;
     }
 }
 

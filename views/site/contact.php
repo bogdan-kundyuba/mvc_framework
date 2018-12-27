@@ -7,7 +7,7 @@
            <div class="col-sm-4 col-sm-offset-4 padding-right">
 
                <?php if ($result) { ?>
-                   <p>Вы зарегестрированы!</p>
+                   <p>Сообщение отправлено! Мы ответим Вам на указанный email!</p>
                <?php } ?>
                <?php if (isset($errors) && is_array($errors)) { ?>
                    <ul>

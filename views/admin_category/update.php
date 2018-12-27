@@ -8,12 +8,12 @@
             <div class="breadcrumbs">
                 <ol class="breadcrumb">
                     <li><a href="/admin">Админпанель</a></li>
-                    <li class="active">Управление категориями</li>
+                    <li class="/admin/category">Управление категориями</li>
                     <li class="active">Редактировать категорию</li>
                 </ol>
             </div>
 
-            <h4>Редактировать категорию </h4>
+            <h4>Редактировать категорию "<?php echo $category['name']; ?>"</h4>
 
             <br>
 
@@ -22,15 +22,15 @@
                     <form action="#" method="post">
 
                         <p>Название</p>
-                        <input type="text" name="name" placeholder="" value="">
+                        <input type="text" name="name" placeholder="" value="<?php echo $category['name']; ?>">
 
                         <p>Порядковый номер</p>
-                        <input type="text" name="sort_order" placeholder="" value="">
+                        <input type="text" name="sort_order" placeholder="" value="<?php echo $category['sort_order']; ?>">
 
                         <p>Статус</p>
                         <select name="status">
-                            <option value="1">Отображаеться</option>
-                            <option value="0">Скрыто</option>
+                            <option value="1" <?php if ($category['status'] == 0) echo 'selected="selected"'; ?>>Отображаеться</option>
+                            <option value="0" <?php if ($category['status'] == 1) echo 'selected="selected"'; ?>>Скрыто</option>
                         </select>
 
                         </br></br>
