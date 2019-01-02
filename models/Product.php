@@ -81,7 +81,7 @@ class Product extends \components\Db {
         $noImage ='no-image.jpg';
 
         // Путь к папке с товарами
-        $path = '/upload/images/products';
+        $path = '/upload/images/products/';
 
         // Путь к изображению товара
         $pathToProductImage = $path. $id.'.jpg';

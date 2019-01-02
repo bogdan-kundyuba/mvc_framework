@@ -36,7 +36,7 @@
                                         <span>
                                             <span><?php echo $prod['price'];?></span>
                                             <label>Количество:</label>
-                                            <input type="text" value="3" />
+                                            <input type="text" value="1" />
                                             <a href="http://mysite.loc/cart/add/<?php echo $prod['id'];?>" class="btn btn-default cart" data-id="<?php echo $prod['id']; ?>" >
                                                 <i class="fa fa-shopping-cart"></i>
                                                 В корзину

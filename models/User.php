@@ -52,14 +52,14 @@ class User extends \components\Db {
     }
 
     public static function checkLogged() {
-        if(isset($_SESSION['user'])) {
+        if (isset($_SESSION['user'])) {
             return $_SESSION['user'];
         }
         header("Location: http://mysite.loc/user/login");
     }
 
     public static function isGuest() {
-        if(isset($_SESSION['user'])){
+        if (isset($_SESSION['user'])){
             return false;
         }
         return true;
@@ -74,7 +74,7 @@ class User extends \components\Db {
     }
 
     public static function checkPhone($phone) {
-        if(strlen($phone) >= 10){
+        if (strlen($phone) >= 10){
             return true;
         }
         return false;
@@ -90,7 +90,7 @@ class User extends \components\Db {
     
      // Проверяет email: не меньше чем 6 символов
     public static function checkEmail($email){
-        if(filter_var($email, FILTER_VALIDATE_EMAIL)){
+        if (filter_var($email, FILTER_VALIDATE_EMAIL)){
             return true;
         }
         return false;
@@ -105,7 +105,7 @@ class User extends \components\Db {
 
         $array = $result->fetch();
 
-        if(!empty($array['email'])) {
+        if (!empty($array['email'])) {
             return true;
         }else {
             return false;
@@ -113,7 +113,7 @@ class User extends \components\Db {
     }
 
     public static function getUserById($id) {
-        if($id){
+        if ($id){
             $db = self::getConnection();
 
             $pdo9 = $db->prepare("SELECT * FROM user WHERE id=?");

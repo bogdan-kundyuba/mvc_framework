@@ -41,7 +41,7 @@ class AdminProductController extends AdminBase {
             // Errors flag
             $errors = false;
 
-            if(!isset($options['name']) || empty($options['name'])){
+            if (!isset($options['name']) || empty($options['name'])){
                 $errors [] = 'Заполните поля!';
             }
 
@@ -51,14 +51,15 @@ class AdminProductController extends AdminBase {
                 $id = \models\Product::createProduct($options);
 
                 //if query added
-                if($id){
+                if ($id){
                     // Check whether the images were loaded through the form
-                    if(is_uploaded_file($_FILES['image']['tmp_name'])){
-                        move_uploaded_file($_FILES['image']['tmp_name'],$_SERVER['DOCUMENT_ROOT']."/upload/images/products/{$id}.jpg");
+//                    echo "<pre>"; print_r($_FILES['image']); die();
+                    if (is_uploaded_file($_FILES["image"]["tmp_name"])){
+                        move_uploaded_file($_FILES["image"]["tmp_name"],$_SERVER['DOCUMENT_ROOT']."/upload/images/products/{$id}.jpg");
                     }
                 }
                 // Redirecting the user to the product management page
-                header("Location: //mysite.loc/admin/product");
+                header("Location: http://mysite.loc/admin/product");
             }
         }
         require_once (ROOT. "/views/admin_product/create.php");
@@ -91,13 +92,12 @@ class AdminProductController extends AdminBase {
 
             // Save changes
             if ($res = \models\Product::updateProductById($id, $options)) {
-                print_r($res);
+//                print_r($res);
                 // if record saved
                 // Check if the image is loaded via the form
                 if (is_uploaded_file($_FILES['image']['tmp_name'])) {
-
                     // If downloaded, move it to the desired folder, give a new name.
-                    move_uploaded_file($_FILES['image'][tmp_name], $_SERVER['DOCUMENT_ROOT'] . "/upload/images/products/{$id}.jpg");
+                    move_uploaded_file($_FILES['image']['tmp_name'], $_SERVER['DOCUMENT_ROOT'] ."/upload/images/products/{$id}.jpg");
                 }
             }
             // Redirect user to product management page

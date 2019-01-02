@@ -43,8 +43,8 @@
                             <p>Производитель</p>
                             <input type="text" name="brand" placeholder="" value="<?php echo $product['brand']; ?>">
                             <p>Изображение товара</p>
-                            <img src="" width="200" alt=""/>
-                            <input type="file" name="image" placeholder="" value="">
+                            <img src="<?php echo \models\Product::getImage($product['id']); ?>" width="200" alt=""/>
+                            <input type="file" name="image" placeholder="" value="<?php echo $product['image']; ?>">
                             <p>Детальное описание</p>
                             <textarea name="description"></textarea>
                             <br><br>
@@ -85,10 +85,7 @@
                             <br/><br/>
 
                         </form>
-
-                        </form>
                     </div>
-
                 </div>
             </div>
         </div>
