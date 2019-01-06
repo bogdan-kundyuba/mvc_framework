@@ -7,7 +7,6 @@
                 <br>
 
                 <div class="breadcrumbs">
-
                     <ol class="breadcrumb">
                         <li><a href="/admin">Админпанель</a></li>
                         <li><a href="/admin/product">Управление товарами</a></li>
@@ -67,7 +66,7 @@
                             <p>Рекомендуемые</p>
                             <select name="is_recommended">
                                 <option value="1">Да</option>
-                                <option value="0">>Нет</option>
+                                <option value="0">Нет</option>
                             </select>
 
                             <br/><br/>

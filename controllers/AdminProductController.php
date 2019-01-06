@@ -72,7 +72,7 @@ class AdminProductController extends AdminBase {
 
         // Get the list of categories for the drop-down list
         $categoriesList = \models\Category::getCategoriesListAdmin();
-        print_r($categoriesList);
+//        print_r($categoriesList);
 
         $product = \models\Product::getProductById($id);
 //        print_r($product);

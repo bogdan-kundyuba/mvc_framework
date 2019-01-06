@@ -76,6 +76,17 @@ class Product extends \components\Db {
         return $prodList;
     }
 
+    public static function getAvailiabilityText($availiability) {
+        switch($availiability){
+            case '1':
+                return 'В наличии';
+                break;
+            case '0':
+                return 'Под заказ';
+                break;
+        }
+    }
+
     public static function getImage($id) {
         // Название изображения-пустышки
         $noImage ='no-image.jpg';
@@ -87,11 +98,11 @@ class Product extends \components\Db {
         $pathToProductImage = $path. $id.'.jpg';
 
         if(file_exists($_SERVER['DOCUMENT_ROOT'].$pathToProductImage)){
-            // Если изображение для товара существует
-            // Возвращаем путь изображения товара
+            // If the image for the product exists
+            // Return the path of the product image
             return $pathToProductImage;
         }
-        // Возвращаем путь изображения-пустышки
+        // Return path of empty image
         return $path. $noImage;
     }
 

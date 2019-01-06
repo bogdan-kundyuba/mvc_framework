@@ -30,7 +30,7 @@
                                 <div class="product-image-wrapper">
                                     <div class="single-products">
                                         <div class="productinfo text-center">
-                                            <img src="public/images/home/product1.jpg" alt=""/>
+                                            <img src="<?php echo \models\Product::getImage($product['id']); ?>" alt=""/>
                                             <h2><?php echo $product['price']; ?></h2>
                                             <a href="http://mysite.loc/product/<?php echo $product['id']; ?>"><?php echo $product['name']; ?></a>
                                             <a href="http://mysite.loc/cart/add/<?php echo $product['id']; ?>"
